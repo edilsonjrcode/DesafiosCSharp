@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace DesafiosCSharp {
     class Intervalo {
@@ -34,7 +35,10 @@ namespace DesafiosCSharp {
         }
 
         public bool TemIntersecao(Intervalo intervalo) {
-            return true;
+            if(this.dataInicial < intervalo.dataInicial & this.dataFinal > intervalo.dataFinal) {
+                return true;
+            }
+            return false;
         }
 
 

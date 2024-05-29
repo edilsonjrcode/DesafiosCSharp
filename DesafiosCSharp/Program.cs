@@ -50,10 +50,11 @@ namespace DesafiosCSharp {
             Console.WriteLine("\n/*********** 5) PROJETO INTERVALO ***********/\n");
 
             Intervalo intervalo = new Intervalo(new DateTime(2020, 1, 1, 20, 00, 00), new DateTime(2020, 1, 5, 15, 0, 0));
-            Intervalo intervalo2 = new Intervalo(new DateTime(2020, 1, 1, 20, 00, 00), new DateTime(2020, 1, 10, 15, 0, 0));
-            Console.WriteLine(intervalo.Duracao);
-            Console.WriteLine(intervalo2.Duracao);
+            Intervalo intervalo2 = new Intervalo(new DateTime(2020, 1, 2, 20, 00, 00), new DateTime(2020, 1, 4, 15, 0, 0));
+            Console.WriteLine(intervalo.Duracao.Ticks);
+            Console.WriteLine(intervalo2.Duracao.Ticks);
             intervalo.VerificaIntervalosIguais(intervalo2);
+            Console.WriteLine("Tem interseção? {0}", intervalo.TemIntersecao(intervalo2) ? "Sim" : "Não");
         }
     }
 }
