@@ -8,21 +8,21 @@ using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace DesafiosCSharp {
     class Intervalo {
 
-        DateTime dataInicial { get; }
-        DateTime dataFinal { get; }
+        public DateTime DataInicial { get; private set; }
+        public DateTime DataFinal { get; private set; }
 
         public Intervalo(DateTime dataInicial, DateTime dataFinal) {
             if (dataInicial > dataFinal) {
                 throw new Exception("A data inicial não pode ser maior que a data final.");
             }
-            this.dataInicial = dataInicial;
-            this.dataFinal = dataFinal;
+            this.DataInicial = dataInicial;
+            this.DataFinal = dataFinal;
         }
 
         private TimeSpan duracao;
         public TimeSpan Duracao { 
             get {
-                TimeSpan intervalo = this.dataFinal - this.dataInicial;
+                TimeSpan intervalo = this.DataFinal - this.DataInicial;
                 return duracao = intervalo;
             }
         }
@@ -35,7 +35,7 @@ namespace DesafiosCSharp {
         }
 
         public bool TemIntersecao(Intervalo intervalo) {
-            if(this.dataInicial < intervalo.dataInicial & this.dataFinal > intervalo.dataFinal) {
+            if(this.DataInicial < intervalo.DataInicial & this.DataFinal > intervalo.DataFinal) {
                 return true;
             }
             return false;
