@@ -56,21 +56,28 @@ namespace DesafiosCSharp {
             poligono.RemoveVertice(ver3);
             poligono.VerVertices();
 
-            //Console.WriteLine("\n/*********** 5) PROJETO INTERVALO ***********/\n");
+            Console.WriteLine("\n/*********** 5) PROJETO INTERVALO ***********/\n");
 
-            //Intervalo intervalo = new Intervalo(new DateTime(2020, 1, 1, 20, 00, 00), new DateTime(2020, 1, 5, 15, 0, 0));
-            //Intervalo intervalo2 = new Intervalo(new DateTime(2020, 1, 2, 20, 00, 00), new DateTime(2020, 1, 4, 15, 0, 0));
-            //Console.WriteLine(intervalo.Duracao.Ticks);
-            //Console.WriteLine(intervalo2.Duracao.Ticks);
-            //intervalo.VerificaIntervalosIguais(intervalo2);
-            //Console.WriteLine("Tem interseção? {0}", intervalo.TemIntersecao(intervalo2) ? "Sim" : "Não");
+            Intervalo intervalo = new Intervalo(new DateTime(2020, 1, 1, 20, 00, 00), new DateTime(2020, 1, 5, 15, 0, 0));
+            Intervalo intervalo2 = new Intervalo(new DateTime(2020, 1, 2, 20, 00, 00), new DateTime(2020, 1, 4, 15, 0, 0));
+            Console.WriteLine(intervalo.Duracao.Ticks);
+            Console.WriteLine(intervalo2.Duracao.Ticks);
+            intervalo.VerificaIntervalosIguais(intervalo2);
+            Console.WriteLine("Tem interseção? {0}", intervalo.TemIntersecao(intervalo2) ? "Sim" : "Não");
 
-            //Console.WriteLine("\n/*********** 6) PROJETO LISTA INTERVALO ***********/\n");
+            Console.WriteLine("\n/*********** 6) PROJETO LISTA INTERVALO ***********/\n");
 
-            ////ListaIntervalo list = new ListaIntervalo(new Intervalo(new DateTime(2020, 1, 1, 20, 00, 00), new DateTime(2020, 1, 5, 15, 0, 0)));
-            ////Console.WriteLine(list.Intervalos);
+            //ListaIntervalo list = new ListaIntervalo(new Intervalo(new DateTime(2020, 1, 1, 20, 00, 00), new DateTime(2020, 1, 5, 15, 0, 0)));
+            //list.VerIntervalos();
+            //list.Add(new Intervalo(new DateTime(2020, 2, 1, 20, 00, 00), new DateTime(2020, 2, 4, 15, 0, 0)));
+            //list.VerIntervalos();
 
-            //Console.WriteLine("\n/*********** 8) PROJETO LISTA INTERVALO ***********/\n");
+            Console.WriteLine("\n/*********** 7) PROJETO ARMSTRONG ***********/\n");
+
+            int number = 54748;
+            number.IsArmstrong();
+
+            Console.WriteLine("\n/*********** 8) PROJETO LISTA INTERVALO ***********/\n");
 
             ////ValidacaoDados.Executar();
 
@@ -81,10 +88,10 @@ namespace DesafiosCSharp {
             //Console.WriteLine("Modelo: {0}", carro.Modelo);
             //Console.WriteLine("Motor: {0}", carro.Motor.Cilindrada);
             //Console.WriteLine("Motor instalado?: {0}", carro.StatusMotor);
-            //carro.velocidadeMaxima();
-            //carro.trocarMotor(new Motor(2.2));
-            //carro.velocidadeMaxima();
-            //carro.motorInstalado(true);
+            //carro.VelocidadeMaxima();
+            //carro.TrocarMotor(new Motor(2.2));
+            //carro.VelocidadeMaxima();
+            //carro.MotorInstalado(true);
 
 
             //Console.WriteLine(" ");
@@ -93,9 +100,12 @@ namespace DesafiosCSharp {
             //Console.WriteLine("Placa: {0}", carro2.Placa);
             //Console.WriteLine("Modelo: {0}", carro2.Modelo);
             //Console.WriteLine("Motor: {0}", carro2.Motor.Cilindrada);
-            //carro2.velocidadeMaxima();
-            //carro2.trocarMotor(new Motor(2.2));
-            //carro2.velocidadeMaxima();
+            //carro2.VelocidadeMaxima();
+            //carro2.TrocarMotor(new Motor(2.2));
+            //carro2.VelocidadeMaxima();
+
+            Console.WriteLine("\n/*********** 10) PROJETO LISTA INTERVALO ***********/\n");
+
 
         }
     }

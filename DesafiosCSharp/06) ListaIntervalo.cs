@@ -20,21 +20,28 @@ namespace DesafiosCSharp {
             private set { intervalos = value; }
         }
 
-        public ListaIntervalo(Intervalo intervalo) {
-            this.intervalo = intervalo;
-            //intervalos = new List<Intervalo>(intervalo);
+        public ListaIntervalo(params Intervalo[] v) {
+            intervalos = new List<Intervalo>(v);
         }
 
-        public void Add(Intervalo novoIntervalo) { 
+        public bool Add(Intervalo novoIntervalo) { 
             foreach (var intervalo in intervalos)
             {
                 if (intervalo.TemIntersecao(novoIntervalo)) {
-                    break;
+                    Console.WriteLine("Esse intervalos não pode ser adicionado poir faz interseção com um intervalo da lista!");
+                    return false;
                 } 
             }
             intervalos.Add(novoIntervalo);
             Console.WriteLine("Intervalo adicionado!");
+            return true;
         }
 
+        public void VerIntervalos() {
+            foreach (var intervalo in intervalos) {
+                Console.WriteLine("{0}) Data inicial: {1}", intervalos.IndexOf(intervalo), intervalo.DataInicial.ToString("d"));
+                Console.WriteLine("{0}) Data final: {1}", intervalos.IndexOf(intervalo), intervalo.DataFinal.ToString("d"));
+            }
+        }
     }
 }
