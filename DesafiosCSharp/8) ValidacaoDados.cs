@@ -24,7 +24,7 @@ namespace DesafiosCSharp {
                     Console.Write("Insira seu nome: ");
                     nome = Console.ReadLine();
                     if (nome?.Length < 5) {
-                        printError("O nome precisa ter mais do que 5 caracteres");
+                        PrintError("O nome precisa ter mais do que 5 caracteres");
                         continue;
                     }
                     count++;
@@ -36,11 +36,11 @@ namespace DesafiosCSharp {
                     try {
                         cpf = long.Parse(cpfLido);
                     } catch (Exception e) {
-                        printError(e.Message);
+                        PrintError(e.Message);
                         continue;
                     }
                     if (cpfLido.Length != 11) {
-                        printError("O CPF precisa ter 11 caracteres");
+                        PrintError("O CPF precisa ter 11 caracteres");
                         continue;
                     }
                     count++;
@@ -53,11 +53,11 @@ namespace DesafiosCSharp {
                         dataDeNascimento = DateTime.Parse(dataDeNascimentoLido);
                     }
                     catch (Exception e){
-                        printError(e.Message);
+                        PrintError(e.Message);
                         continue;
                     }
                     if ((DateTime.Today.Year - dataDeNascimento.Year) < 18) {
-                        printError("O usuário precisa ter mais de 18 anos");
+                        PrintError("O usuário precisa ter mais de 18 anos");
                         continue;
                     }
                     count++;
@@ -69,11 +69,11 @@ namespace DesafiosCSharp {
                     try {
                         rendaMensal = float.Parse(rendaMensalLido);
                     } catch (Exception e) {
-                        printError(e.Message);
+                        PrintError(e.Message);
                         continue;
                     }
                     if (float.Parse(rendaMensalLido) <= 0) {
-                        printError("A sua renda precisa ser maior ou igual a zero.");
+                        PrintError("A sua renda precisa ser maior ou igual a zero.");
                         continue;
                     }
                     count++;
@@ -85,11 +85,11 @@ namespace DesafiosCSharp {
                     try {
                         estadoCivil = char.Parse(estadoCivilLido);
                     } catch (Exception e) {
-                        printError(e.Message);
+                        PrintError(e.Message);
                         continue;
                     }
                     if (estadoCivilLido.Length != 1 || (estadoCivilLido != "C" & estadoCivilLido != "S" & estadoCivilLido != "D" & estadoCivilLido != "V")) {
-                        printError("Estado civil inválido.");
+                        PrintError("Estado civil inválido.");
                         continue;
                     }
                     count++;
@@ -101,11 +101,11 @@ namespace DesafiosCSharp {
                     try {
                         dependentes = int.Parse(dependentesLido);
                     } catch (Exception e) {
-                        printError(e.Message);
+                        PrintError(e.Message);
                         continue;
                     }
                     if (int.Parse(dependentesLido) < 0 | int.Parse(dependentesLido) > 10) {
-                        printError("A sua quantidade de dependentes precisa ser maior ou igual a 0 e menor ou igual a 10.");
+                        PrintError("A sua quantidade de dependentes precisa ser maior ou igual a 0 e menor ou igual a 10.");
                         continue;
                     }
                     count++;
@@ -125,7 +125,7 @@ namespace DesafiosCSharp {
             Console.WriteLine("\n**************************************\n");
             Console.ResetColor();
 
-            void printError(String msg) {
+            void PrintError(String msg) {
                 Exception e = new Exception(msg);
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("\nOcorreu um erro: {0}\n", e.Message);

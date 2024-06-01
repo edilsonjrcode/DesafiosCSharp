@@ -45,44 +45,57 @@ namespace DesafiosCSharp {
             Console.WriteLine("\n/*********** 4) PROJETO POLÍGONO ***********/\n");
 
             Poligono poligono = new Poligono(ver, ver2, ver3);
-            Console.WriteLine(poligono.vertices[0]);
+            poligono.VerVertices();
+            poligono.AddVertice(new Vertice(8, 5));
+            poligono.AddVertice(new Vertice(2, 4));
+            Console.WriteLine("Quantidade de Vértices: {0}", poligono.QuantVertices);
+            Console.WriteLine("Perímetro");
+            poligono.Perimetro();
+            poligono.RemoveVertice(ver);
+            poligono.RemoveVertice(ver2);
+            poligono.RemoveVertice(ver3);
+            poligono.VerVertices();
 
-            Console.WriteLine("\n/*********** 5) PROJETO INTERVALO ***********/\n");
+            //Console.WriteLine("\n/*********** 5) PROJETO INTERVALO ***********/\n");
 
-            Intervalo intervalo = new Intervalo(new DateTime(2020, 1, 1, 20, 00, 00), new DateTime(2020, 1, 5, 15, 0, 0));
-            Intervalo intervalo2 = new Intervalo(new DateTime(2020, 1, 2, 20, 00, 00), new DateTime(2020, 1, 4, 15, 0, 0));
-            Console.WriteLine(intervalo.Duracao.Ticks);
-            Console.WriteLine(intervalo2.Duracao.Ticks);
-            intervalo.VerificaIntervalosIguais(intervalo2);
-            Console.WriteLine("Tem interseção? {0}", intervalo.TemIntersecao(intervalo2) ? "Sim" : "Não");
+            //Intervalo intervalo = new Intervalo(new DateTime(2020, 1, 1, 20, 00, 00), new DateTime(2020, 1, 5, 15, 0, 0));
+            //Intervalo intervalo2 = new Intervalo(new DateTime(2020, 1, 2, 20, 00, 00), new DateTime(2020, 1, 4, 15, 0, 0));
+            //Console.WriteLine(intervalo.Duracao.Ticks);
+            //Console.WriteLine(intervalo2.Duracao.Ticks);
+            //intervalo.VerificaIntervalosIguais(intervalo2);
+            //Console.WriteLine("Tem interseção? {0}", intervalo.TemIntersecao(intervalo2) ? "Sim" : "Não");
 
-            Console.WriteLine("\n/*********** 6) PROJETO LISTA INTERVALO ***********/\n");
+            //Console.WriteLine("\n/*********** 6) PROJETO LISTA INTERVALO ***********/\n");
 
-            //ListaIntervalo list = new ListaIntervalo(new Intervalo(new DateTime(2020, 1, 1, 20, 00, 00), new DateTime(2020, 1, 5, 15, 0, 0)));
-            //Console.WriteLine(list.Intervalos);
+            ////ListaIntervalo list = new ListaIntervalo(new Intervalo(new DateTime(2020, 1, 1, 20, 00, 00), new DateTime(2020, 1, 5, 15, 0, 0)));
+            ////Console.WriteLine(list.Intervalos);
 
-            Console.WriteLine("\n/*********** 8) PROJETO LISTA INTERVALO ***********/\n");
+            //Console.WriteLine("\n/*********** 8) PROJETO LISTA INTERVALO ***********/\n");
 
-            //ValidacaoDados.Executar();
+            ////ValidacaoDados.Executar();
 
-            Console.WriteLine("\n/*********** 9) PROJETO CARRO ***********/\n");
+            //Console.WriteLine("\n/*********** 9) PROJETO CARRO ***********/\n");
 
-            Carro carro = new Carro("MOA-459", "Celta", new Motor(1.6));
-            Console.WriteLine("Placa: {0}", carro.Placa);
-            Console.WriteLine("Modelo: {0}", carro.Modelo);
-            Console.WriteLine("Motor: {0}", carro.Motor.Cilindrada);
-            carro.velocidadeMaxima();
-            carro.trocarMotor(new Motor(2.2));
-            carro.velocidadeMaxima();
+            //Carro carro = new Carro("MOA-459", "Celta", new Motor(1.6));
+            //Console.WriteLine("Placa: {0}", carro.Placa);
+            //Console.WriteLine("Modelo: {0}", carro.Modelo);
+            //Console.WriteLine("Motor: {0}", carro.Motor.Cilindrada);
+            //Console.WriteLine("Motor instalado?: {0}", carro.StatusMotor);
+            //carro.velocidadeMaxima();
+            //carro.trocarMotor(new Motor(2.2));
+            //carro.velocidadeMaxima();
+            //carro.motorInstalado(true);
 
-            Carro carro2 = new Carro("NFJ-896", "Civic", new Motor(1.0));
-            Console.WriteLine("Placa: {0}", carro2.Placa);
-            Console.WriteLine("Modelo: {0}", carro2.Modelo);
-            Console.WriteLine("Motor: {0}", carro2.Motor.Cilindrada);
-            carro2.velocidadeMaxima();
-            carro2.trocarMotor(new Motor(2.2));
-            carro2.velocidadeMaxima();
 
+            //Console.WriteLine(" ");
+
+            //Carro carro2 = new Carro("NFJ-896", "Civic", new Motor(1.0));
+            //Console.WriteLine("Placa: {0}", carro2.Placa);
+            //Console.WriteLine("Modelo: {0}", carro2.Modelo);
+            //Console.WriteLine("Motor: {0}", carro2.Motor.Cilindrada);
+            //carro2.velocidadeMaxima();
+            //carro2.trocarMotor(new Motor(2.2));
+            //carro2.velocidadeMaxima();
 
         }
     }

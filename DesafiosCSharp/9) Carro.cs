@@ -10,19 +10,21 @@ namespace DesafiosCSharp {
         public string Placa {  get; private set; }
         public string Modelo { get; private set; }
         public Motor Motor { get; private set; }
+        public bool StatusMotor { get; private set; }
 
         public Carro(string placa, string modelo, Motor motor) {
             this.Placa = placa;
             this.Modelo = modelo;
             this.Motor = motor;
+            this.StatusMotor = true;
         }
 
-        public void trocarMotor(Motor motor) {
+        public void TrocarMotor(Motor motor) {
             this.Motor = motor;
             Console.WriteLine("Motor alterado! Seu novo motor possui {0} cilindradas.", motor.Cilindrada);
         }
 
-        public void velocidadeMaxima() {
+        public void VelocidadeMaxima() {
             if (this.Motor.Cilindrada <= 1.0) {
                 Console.WriteLine("A velocidade máxima do carro é 140km/h");
             } else if (this.Motor.Cilindrada <= 1.6) {
@@ -34,5 +36,12 @@ namespace DesafiosCSharp {
             }
         }
 
+        public void MotorInstalado(bool status) {
+            if(StatusMotor == status) {
+                Console.WriteLine("O motor já se encontra {0}.", status? "Instalado" : "Desinstalado");
+            }
+            StatusMotor = status;
+            Console.WriteLine("O motor foi {0}.", status ? "Instalado" : "Desinstalado");
+        }
     }
 }
