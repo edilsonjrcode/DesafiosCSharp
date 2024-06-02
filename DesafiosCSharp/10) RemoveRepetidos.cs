@@ -12,9 +12,17 @@ namespace DesafiosCSharp {
             List<T> valoresUnicos = new List<T>();
 
             for (int i = 0; i < lista.Count; i++) {
-                if (lista[i].Equals(lista[i++])) {
-                    Console.WriteLine("Item {0} é igual o item {1}", lista[i], lista[i++]);
-                } else {
+                bool repete = false;
+                for (int j = 0; j < lista.Count; j++) {
+                    if(i != j) {
+                        if (lista[i].Equals(lista[j])) {
+                            Console.WriteLine("Item {0} é igual o item {1}", lista[i], lista[j]);
+                            repete = true;
+                            break;
+                        } 
+                    }
+                }
+                if (!repete) {
                     valoresUnicos.Add(lista[i]);
                 }
             }
@@ -26,6 +34,11 @@ namespace DesafiosCSharp {
             //        perimetroSoma += vertices[i].Distancia(vertices[1]);
             //    }
             //}
+
+            foreach (var valor in valoresUnicos)
+            {
+                Console.Write("{0}, ", valor);
+            }
 
             return valoresUnicos;
         }
