@@ -68,9 +68,12 @@ namespace DesafiosCSharp {
             Console.WriteLine("\n/*********** 6) PROJETO LISTA INTERVALO ***********/\n");
 
             ListaIntervalo list = new ListaIntervalo(new Intervalo(new DateTime(2020, 1, 1, 20, 00, 00), new DateTime(2020, 1, 5, 15, 0, 0)));
-            list.VerIntervalos();
             list.Add(new Intervalo(new DateTime(2020, 2, 1, 20, 00, 00), new DateTime(2020, 2, 4, 15, 0, 0)));
-            list.VerIntervalos();
+            list.Add(new Intervalo(new DateTime(2019, 2, 1, 20, 00, 00), new DateTime(2019, 2, 4, 15, 0, 0)));
+            list.Add(new Intervalo(new DateTime(2019, 2, 1, 15, 00, 00), new DateTime(2019, 2, 4, 15, 0, 0)));
+            foreach (Intervalo interval in list.Intervalos) {
+                Console.WriteLine(interval.DataInicial);
+            }
 
             Console.WriteLine("\n/*********** 7) PROJETO ARMSTRONG ***********/\n");
 
@@ -93,7 +96,6 @@ namespace DesafiosCSharp {
             carro.VelocidadeMaxima();
             carro.MotorInstalado(true);
 
-
             Console.WriteLine(" ");
 
             Carro carro2 = new Carro("NFJ-896", "Civic", new Motor(1.0));
@@ -107,7 +109,10 @@ namespace DesafiosCSharp {
             Console.WriteLine("\n/*********** 10) PROJETO LISTA INTERVALO ***********/\n");
 
             List<String> lista = ["Oi", "Tchau", "Legal", "Beleza", "Oi"];
+            List<int> lista2 = [1, 2, 3, 3, 2, 1, 6, 5, 4, 4];
+            List<Vertice> vertice = [new Vertice(0, 0), new Vertice(1, 2), new Vertice(0, 0)];
             Console.WriteLine(lista.RemoveRepetidos());
+            Console.WriteLine(lista2.RemoveRepetidos());
 
         }
     }

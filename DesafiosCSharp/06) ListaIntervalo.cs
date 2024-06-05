@@ -13,8 +13,7 @@ namespace DesafiosCSharp {
 
         public List<Intervalo> Intervalos { 
             get {
-                return intervalos;
-                //return intervalos.OrderBy(x => x.DataInicial).ToList();
+                return intervalos.OrderBy(x => x.DataInicial).ToList();
             }
 
             private set { intervalos = value; }
